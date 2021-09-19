@@ -1,0 +1,10 @@
+chat.db
+test.py
+sixnine/session.session
+__pycache__
+sixnine/__pycache__
+dB/__pycache__
+venv/
+local.env
+.idea
+*.jpg

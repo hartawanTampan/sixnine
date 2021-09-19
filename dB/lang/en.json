@@ -1,0 +1,6 @@
+{
+  "stream": "Streaming {} in this chat",
+  "end": "Bot succesfully leave from chat",
+  "process": "processing.. please wait.",
+  "changed": "language changed to {}"
+}
