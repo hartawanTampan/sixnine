@@ -43,18 +43,18 @@ Coming soon
 
 ## VPS Deployment
 ```sh
-- sudo apt update && upgrade -y
+- sudo apt update && apt upgrade -y
 - sudo apt install python3-pip -y virtualenv
 - sudo apt install ffmpeg -y
 - git clone https://github.com/DoellBarr/sixnine
-- cd video-stream
+- cd sixnine
 - virtualenv venv #Create Virtual Environment.
 - source venv/bin/activate #Activate Virtual Environment
 - pip3 install --upgrade pip
 - pip3 install -U -r requirements.txt
-- cp -r sample.env local.env
+- cp sample.env local.env
 - nano local.env #Fill it with your variables value.
-- python3 -m bot
+- python3 -m sixnine
 ```
 
 # Special Credits 💖
