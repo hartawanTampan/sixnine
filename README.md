@@ -7,7 +7,7 @@ telegram bot project for streaming video on telegram video chat, powered by [pyt
     <a href="https://www.python.org/" > <img src="https://img.shields.io/badge/Made%20with-Python-black.svg?style=flat-square&logo=python&logoColor=blue&color=red" /></a>
     <a href="https://github.com/DoellBarr/sixnine/graphs/commit-activity" alt="Maintenance"> <img src="https://img.shields.io/badge/Maintained%3F-yes-red.svg?style=flat-square" /></a>
     <a href="https://github.com/DoellBarr/sixnine"> <img src="https://img.shields.io/github/repo-size/DoellBarr/sixnine?color=red&logo=github&logoColor=blue&style=flat-square" /></a>
-    <a href="https://github.com/DoellBarr/sixnine/commits/main"> <img src="https://img.shields.io/github/last-commit/DoellBarr/sixnine?color=red&logo=github&logoColor=blue&style=flat-square" /></a>
+    <a href="https://github.com/DoellBarr/sixnine/commits/master"> <img src="https://img.shields.io/github/last-commit/DoellBarr/sixnine?color=red&logo=github&logoColor=blue&style=flat-square" /></a>
     <a href="https://github.com/DoellBarr/sixnine/issues"> <img src="https://img.shields.io/github/issues/DoellBarr/sixnine?color=red&logo=github&logoColor=blue&style=flat-square" /></a>
     <a href="https://github.com/DoellBarr/sixnine/network/members"> <img src="https://img.shields.io/github/forks/DoellBarr/sixnine?color=red&logo=github&logoColor=blue&style=flat-square" /></a>  
     <a href="https://github.com/DoellBarr/sixnine/network/members"> <img src="https://img.shields.io/github/stars/DoellBarr/sixnine?color=red&logo=github&logoColor=blue&style=flat-square" /></a>  
