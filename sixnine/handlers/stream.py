@@ -50,7 +50,7 @@ async def skip_current_playing(_, message: Message):
 
 
 @Client.on_message(command("streamv2"))
-async def test_only(_, message: Message):
+async def stream_v2(_, message: Message):
     query = " ".join(message.command[1:])
     user_id = message.from_user.id
     rez = "\n"
@@ -67,3 +67,8 @@ async def test_only(_, message: Message):
             list(inline_keyboard2(query, user_id))
         ]
     ), disable_web_page_preview=True)
+
+
+@Client.on_message(command("playlist"))
+async def get_playlist(_, message: Message):
+    await player.send_playlist(message)

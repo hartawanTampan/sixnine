@@ -44,27 +44,17 @@ class Player:
 		await call.start_video(downloaded_video, True, False, True)
 		self._client[chat_id] = call
 
-		@self._client[chat_id].on_playout_ended
-		async def playout_ended(gc, source, media):
-			if len(self.playlist[chat_id]) > 1:
-				self.playlist[chat_id].pop(0)
-				query = self.playlist[chat_id][0]['query']
-				downloaded_video = await get_youtube_stream(query)
-				await self._client[chat_id].start_video(downloaded_video, True, False, True)
-				await message.reply(f"Skipped track, and playing {query}")
-				return
-			await self._client[chat_id].leave_current_group_call()
-
 	async def _dummy_start_stream(self, query, message):
 		chat_id = message.chat.id
 		playlist = self.playlist
 		if len(playlist) >= 1:
 			try:
-				playlist[chat_id].extend([{'query': query}])
-				y = await message.reply("Queued")
-				await asyncio.sleep(3)
-				await y.delete()
-				return
+				if len(playlist[chat_id]) >= 1:
+					playlist[chat_id].extend([{'query': query}])
+					y = await message.reply("Queued")
+					await asyncio.sleep(3)
+					await y.delete()
+					return
 			except KeyError:
 				await message.reply("restart the bot")
 				return
@@ -101,9 +91,11 @@ class Player:
 		chat_id = message.chat.id
 		playlist = self.playlist
 		if self._client[chat_id].is_connected:
-			await self._client[chat_id].stop()
-			playlist[chat_id].clear()
+			await self._client[chat_id].leave()
+			await asyncio.sleep(5)
+			del playlist[chat_id]
 			await message.reply("ended")
+			await asyncio.sleep(3)
 		else:
 			await message.reply("Not in call")
 
@@ -146,7 +138,9 @@ class Player:
 			playlist[chat_id].pop(0)
 			query = playlist[chat_id][0]['query']
 			downloaded_video = await get_youtube_stream(query)
+			await asyncio.sleep(3)
 			await self._client[chat_id].start_video(downloaded_video, True, False, True)
+			await asyncio.sleep(3)
 			await message.reply(f"Skipped track, and playing {query}")
 			return
 		await message.reply("No playlist")
